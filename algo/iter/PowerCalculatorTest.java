@@ -25,6 +25,16 @@ public class PowerCalculatorTest {
 		assertEquals(27, calculator.calculate(27,1));
 	}
 
+	@Test
+	public void raisedToAny(){
+		PowerCalculator calculator = PowerCalculator.INSTANCE;
+		System.out.println("raised to any");
+		assertEquals(0, calculator.calculate(0,7));
+		assertEquals(1, calculator.calculate(1,9));
+		assertEquals(16, calculator.calculate(4,2));
+		assertEquals(27, calculator.calculate(3,3));
+	}
+	
 	@Test(expected=IllegalArgumentException.class)
 	public void negativeBase(){
 		PowerCalculator calculator = PowerCalculator.INSTANCE;
