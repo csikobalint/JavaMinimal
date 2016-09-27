@@ -1,4 +1,4 @@
-package algo.iter;
+package algo;
 
 public class PowerCalculator{
 	private PowerCalculator(){}

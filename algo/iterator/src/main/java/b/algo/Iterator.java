@@ -1,4 +1,4 @@
-package algo.iter;
+package b.algo;
 public interface Iterator{
 
 	void first();

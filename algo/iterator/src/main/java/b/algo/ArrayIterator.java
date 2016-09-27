@@ -1,4 +1,4 @@
-package algo.iter;
+package b.algo;
 
 public class ArrayIterator<T> implements Iterator {
 
@@ -7,11 +7,15 @@ public class ArrayIterator<T> implements Iterator {
 	private final int first;
 	private final int last;
 
-	public ArrayIterator(T[] array){
+	public ArrayIterator(T[] array, int first, int count){
 		if (array == null) throw new IllegalArgumentException();
 		this.array = array;
-		this.first = 0;		
-		this.last = array.length - 1;
+		this.first = first;		
+		this.last = first + count;
+	}
+
+	public ArrayIterator(T[] array){
+		this(array, 0, array.length - 1);
 	}
 
 	public void first(){
@@ -35,6 +39,7 @@ public class ArrayIterator<T> implements Iterator {
 	}
 
 	public Object current() throws IteratorOutOfBoundsException {
+		if (isDone()) throw new IteratorOutOfBoundsException("Iterator out of bounds");
 		return array[current];
 	}
 }
