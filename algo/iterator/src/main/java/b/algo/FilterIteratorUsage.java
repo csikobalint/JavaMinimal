@@ -1,6 +1,8 @@
 package b.algo;
 
+import java.util.Arrays;
 import java.util.logging.Filter;
+import java.util.stream.Stream;
 
 /**
  * Created by Bálint on 2016. 10. 02..
@@ -17,5 +19,9 @@ public class FilterIteratorUsage {
         for (i.first();!i.isDone(); i.next()){
             System.out.println(i.current());
         }
+
+        System.out.println("Same effect with java 8");
+        Arrays.stream(strings).filter(s->s.toUpperCase().equals(s)).forEach(System.out::println);
+
     }
 }
