@@ -1,5 +1,5 @@
 package b.algo;
-public interface Iterator{
+public interface Iterator<T>{
 
 	void first();
 
@@ -11,6 +11,6 @@ public interface Iterator{
 
 	boolean isDone();
 
-	Object current() throws	IteratorOutOfBoundsException;
+	T current() throws	IteratorOutOfBoundsException;
 
 }
